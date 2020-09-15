@@ -1,6 +1,8 @@
 
 # latex-formatter README
 
+**Forked from nfode/latex-formatter**
+
 LaTex-Formatter is a simple VSCode tool for the LaTex - Language
 
 ![Example](img/format_example.gif)
@@ -47,6 +49,12 @@ Reference for the following guides: [latexindent.pl - Documentation](https://git
     to check if **latexindent** was correctly installed
 
 ## Release Notes
+
+### 1.0.6
+
+add -l and -m flags to allow overriting the file and formating it.
+it will look in the local directory for a localSettings.yaml to format
+
 ### 1.0.5
 
 filenames with spaces are now supported
