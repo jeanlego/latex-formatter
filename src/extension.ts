@@ -73,8 +73,9 @@ export class LaTexFormatter {
 
     }
     private format(filename: string, document: vscode.TextDocument): Thenable<vscode.TextEdit[]> {
+	// we allow local file to overwrite the settings like clangformat
         return new Promise((resolve, reject) => {
-            cp.exec(this.formatter + ' "' + filename + '"', (err, stdout, stderr) => {
+            cp.exec(this.formatter + ' -l -m "' + filename + '"', (err, stdout, stderr) => {
                 if (stdout != '') {
                     var edit = [vscode.TextEdit.replace(fullRange(document), stdout)];
                     return resolve(edit);
